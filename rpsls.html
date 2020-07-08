@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor Lizard Spock</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper Scissor Lizard Spock</h1>
+    </header>
+    <section>
+    
+        <h3>Rules</h3>
+        
+          <!-- <p class="rules"> Throw rock to crush scissors or lizard.<br>
+            Use paper to cover rock or disprove Spock.<br>
+            Play scissors to cut paper or decapitate lizard.<br>
+            Choose lizard to eat paper or poison Spock.<br>
+            Use Spock to vaporize rock or smash the scissors.<br>
+    </p>-->
+    <ol class="rules"  type="A">
+        <li>Throw rock to crush scissors or lizard.</li>
+        <li> Use paper to cover rock or disprove Spock</li>
+        <li> Play scissors to cut paper or decapitate lizard.</li>
+        <li> Choose lizard to eat paper or poison Spock.</li>
+        <li> Use Spock to vaporize rock or smash the scissors.</li>
+    </ol>
+    <hr>
+    
+    </sections>
+ <h2>Scoreboard</h2>
+    <section class= "scoreboard">
+     <div class="badge" id="user-label">User</div>
+     <div class="badge" id="comp-label">Computer</div>
+     <span  class ="score" id="user-score">0</span>:<span  class="score" id="comp-score">0</span>
+ </section>
+ <div class="result">
+     <p>Paper covers Rock. You win!</p>
+ </div>
+<section class="choices">
+    <div class="choice" id="r">
+        <img src="images/rock.png" alt="Rock" >
+    </div>
+    <div class="choice" id="p">
+        <img src="images/paper.png" alt=Paper"" >
+    </div>
+    <div class="choice" id="s">
+        <img src="images/sci.png" alt="Scissor" >
+    </div>
+    <div class="choice" id="l">
+        <img src="images/lizard.jpg" alt="Lizard" >
+    </div>
+    <div class="choice" id="sp">
+        <img src="images/spock.jpg" alt="Spock" >
+    </div>
+</section>
+<div id="message"> Make Your Move</div>
+</div>
+
+<script>
+    var a=0;
+    var userScore  = 0;
+var compScore = 0;
+var user_span = document.getElementById("user-score");
+var comp_span = document.getElementById("comp-score");
+const scoreboard = document.querySelector(".scoreboard");
+var result_div = document.querySelector(".result>p");
+const rock_div = document.getElementById("r");
+const paper_div = document.getElementById("p");
+const scissor_div = document.getElementById("s");
+const lizard_div = document.getElementById("l");
+const spock_div = document.getElementById("sp");
+
+function compchoice(){
+    var c = ["r","p","s","l","sp"];
+    a = (Math.floor(Math.random()*5));
+    return c[a];
+}
+function wordconvert(letter){
+    if(letter=="r")return "Rock";
+    if(letter=="p")return "Paper";
+    if(letter=="s")return "Scissors";
+    if(letter=="l")return "Lizard";
+    if(letter=="sp")return "Spock";
+}
+function win(user,comp){
+    userScore++;
+    user_span.innerHTML = userScore;
+    comp_span.innerHTML = compScore;
+    result_div.innerHTML = wordconvert(user)+" beats "+ wordconvert(comp)+" . "+" You Win!!"
+
+}
+function lose(user,comp){
+    compScore++;
+    user_span.innerHTML = userScore;
+    comp_span.innerHTML = compScore;
+    result_div.innerHTML = wordconvert(comp)+" beats "+ wordconvert(user)+" . "+" You Lose..."
+
+}
+function draw(user,comp){
+    compScore++;
+    userScore++;
+    user_span.innerHTML = userScore;
+    comp_span.innerHTML = compScore;
+    result_div.innerHTML = "Its A Draw."
+
+}
+function Choice(userchoice){
+    var cc=compchoice();
+    var f= userchoice + cc ;
+    if(f=="rs"|| f=="rl"||f=="pr"||f=="psp"||f=="sp"||f=="sl"||f=="lp"||f=="lsp"||f=="spr"||f=="sps")
+    {
+        win(userchoice,cc);
+    }
+    else if(f=="rp"||f=="rsp"||f=="pl"||f=="ps"||f=="sr"||f=="ssp"||f=="lr"||f=="ls"||f=="spp"||f=="spl")
+    {
+        lose(userchoice,cc);
+    }
+    else 
+    {
+        draw(userchoice,cc);
+    }
+
+    
+
+}
+
+
+
+
+function main(){
+
+rock_div.addEventListener("click",function() {
+   Choice("r");
+})
+
+paper_div.addEventListener("click",function() {
+    Choice("p");
+})
+scissor_div.addEventListener("click",function() {
+    Choice("s");
+})
+lizard_div.addEventListener("click",function() {
+    Choice("l");
+})
+spock_div.addEventListener("click",function() {
+    Choice("sp");
+})
+}
+main();
+
+</script>
+
+</body>
+
+</html>

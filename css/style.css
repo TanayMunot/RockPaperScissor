@@ -1,0 +1,115 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(12, 7, 59);
+    background-image: linear-gradient(rgb(yellow),rgb(red));
+    
+   
+}
+header{
+text-align: center;
+background-color: white;
+font-size: 20px;
+font-family:  Georgia, Times, 'Times New Roman', serif;
+padding: 30px;
+
+}
+h3{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: small-caps;
+    color: #ffffff;
+    margin: 15px;
+}
+ol{
+ list-style-type: decimal;
+ list-style-position: outside;
+ margin:10px 0px 50px 50px;
+}
+ol.rules{
+   
+    font-size: 30px;
+    color:#ffffff;
+
+}
+
+.scoreboard{
+    text-align: center;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 3px;
+    margin: 25px auto;
+    padding:25px 35px;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    border-radius: 5px;
+   font-size: 100px;
+   color: white;
+}
+.badge{
+    background-color: red;
+     font-size: 30px ;
+    padding: 2px;
+   
+}
+#user-label{
+    position: absolute;
+    left: -30px;
+    top: 75px;
+}
+#comp-label{
+    position: absolute;
+    right: -55px;
+    top: 75px;
+}
+.score{
+
+}
+.result{
+    margin: 15px;
+    font-size: 40px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.choices{
+    text-align: center;
+    margin: 25px 0px;
+}
+.choice{
+    display: inline-block;
+    border: 2px solid black;
+    
+    padding: 10px;
+    margin: 0 20px;
+    
+}
+.choice:hover{
+    cursor: pointer;
+    background-color: grey;
+}
+#message{
+    margin: 15px;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+
+}
+h2{
+    margin-top: 25px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
